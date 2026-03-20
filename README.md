@@ -38,50 +38,24 @@ consumption.
 ```text
 Hack4IMPACTTrack2-DedSec/
 ├── public/
-│   ├── _redirects
-│   ├── favicon.ico
 │   ├── index.html
-│   ├── logo192.png
-│   ├── logo512.png
 │   ├── manifest.json
-│   ├── robots.txt
 │   └── media/
-│       ├── 12327025_2160_3840_60fps.mp4
-│       ├── 4126116-uhd_4096_2160_25fps.mp4
-│       ├── 5266698-hd_1920_1080_30fps.mp4
-│       ├── 5925311-uhd_2160_3840_30fps.mp4
-│       ├── 7563840-hd_1080_1920_30fps.mp4
-│       ├── 7563865-hd_1080_1920_30fps.mp4
-│       ├── 7563920-hd_1920_1080_30fps.mp4
-│       ├── concept_nike_promo_remix.mp4
-│       └── halftone_print_effect_remix.mp4
 ├── src/
 │   ├── components/
-│   │   ├── admin/
 │   │   ├── auth/
 │   │   ├── buyer/
 │   │   ├── common/
-│   │   ├── landing/
-│   │   ├── layout/
-│   │   ├── orders/
-│   │   ├── profile/
 │   │   ├── seller/
-│   │   └── settings/
-│   ├── context/
+│   │   └── admin/
 │   ├── redux/
-│   │   ├── middleware/
-│   │   └── slices/
-│   ├── styles/
+│   │   ├── slices/
+│   │   └── store.js
 │   ├── utils/
-│   ├── App.css
 │   ├── App.js
-│   ├── App.test.js
-│   ├── index.css
 │   ├── index.js
-│   ├── logo.svg
-│   ├── reportWebVitals.js
 │   ├── setupProxy.js
-│   └── setupTests.js
+│   └── context/
 ├── package.json
 ├── package-lock.json
 └── README.md
