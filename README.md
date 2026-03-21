@@ -24,6 +24,10 @@ Use these demo credentials for a smooth experience:
    - Email: `nidhilogins@gmail.com`
    - Password: `160222`
 
+### Loading Note
+Please wait up to **30 seconds** for products to appear after login in some sessions.
+This project was built rapidly during a 48-hour hackathon, so occasional initial load delay can happen.
+
 ## Detailed Presentation
 For a clearer walkthrough of the problem statement and proposed solution, view the project presentation:
 
@@ -38,6 +42,17 @@ For a clearer walkthrough of the problem statement and proposed solution, view t
 Fast Fashion Waste: The Hidden Cost of Throwaway Clothing Culture.
 
 The platform helps buyers and sellers exchange pre-loved clothing with a better UX, seller tooling, and integrated order flows.
+
+## SDG Alignment
+### SDG 12: Responsible Consumption and Production
+- Extends product life cycle by enabling resale of pre-loved clothing.
+- Reduces textile waste and pressure on fast-fashion production.
+- Encourages conscious buying behavior through a circular marketplace model.
+
+### SDG 9: Industry, Innovation and Infrastructure
+- Builds digital commerce infrastructure for sustainable micro-entrepreneurs and thrift sellers.
+- Uses scalable cloud-backed architecture (frontend deployment + backend APIs + PostgreSQL) to support reliable marketplace operations.
+- Demonstrates innovation in combining sustainability goals with accessible, real-world platform design.
 
 ## Architecture
 This repository is full-stack:
