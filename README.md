@@ -4,8 +4,30 @@
 ![SDIS KIIT](https://img.shields.io/badge/SDIS-KIIT%202026-22C55E?style=for-the-badge)
 ![Domain](https://img.shields.io/badge/Domain-Green%20Infrastructure%20%26%20Smart%20Cities-2DD4BF?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
+[![Live Demo](https://img.shields.io/badge/LIVE-DEMO-111827?style=for-the-badge&logo=vercel&logoColor=white)](https://thriftapp-3ofiii.vercel.app/)
 
 Thrift marketplace for reducing fast-fashion waste through circular commerce.
+
+## Live App
+### Production Deployment
+Open the live app here:
+
+**https://thriftapp-3ofiii.vercel.app/**
+
+### Direct Login Experience
+Use these demo credentials for a smooth experience:
+
+- Seller login:
+   - Store name: `hiten_thrifts`
+   - Password: `iamhiten`
+- Buyer login:
+   - Email: `nidhilogins@gmail.com`
+   - Password: `160222`
+
+## Detailed Presentation
+For a clearer walkthrough of the problem statement and proposed solution, view the project presentation:
+
+**https://docs.google.com/presentation/d/16ns3WCkXV74T7MjbYxgThJWlvvG6jgJl/edit?usp=sharing&ouid=106225712437847549190&rtpof=true&sd=true**
 
 ## Team
 - Team Name: DedSec
