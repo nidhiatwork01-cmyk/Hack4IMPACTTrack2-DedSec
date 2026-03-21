@@ -5,101 +5,122 @@
 ![Domain](https://img.shields.io/badge/Domain-Green%20Infrastructure%20%26%20Smart%20Cities-2DD4BF?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
 
-## Team Name
-DedSec
+Thrift marketplace for reducing fast-fashion waste through circular commerce.
 
-## Team Members
-- Nidhi Singh (Team Leader)
-
-## Domain
-Green Infrastructure & Smart Cities
+## Team
+- Team Name: DedSec
+- Team Lead: Nidhi Singh
+- Domain: Green Infrastructure and Smart Cities
 
 ## Problem Statement
-Fast Fashion Waste: The Hidden Cost of Throwaway Clothing Culture
+Fast Fashion Waste: The Hidden Cost of Throwaway Clothing Culture.
 
-The global fashion industry generates 92 million tonnes of textile waste
-every year. In India, 70% of urban wardrobe clothing is worn fewer than
-3 times before being discarded. Existing resale platforms are fragmented
-with poor UX and no structured seller tools, driving continued demand for
-new fast-fashion production and accelerating carbon emissions and water
-consumption.
+The platform helps buyers and sellers exchange pre-loved clothing with a better UX, seller tooling, and integrated order flows.
+
+## Architecture
+This repository is full-stack:
+
+- Frontend: React 19 + Redux Toolkit (in `src`)
+- Backend: Express + SQLite (dev) / PostgreSQL (production) (in `server`)
+- Media: local uploads in dev, Cloudinary in production
+- Payment: Razorpay client integration
 
 ## Tech Stack
 | Layer | Technologies |
 |---|---|
-| Frontend Framework | React 19, React DOM |
-| State Management | Redux Toolkit, React Redux |
-| Routing | React Router DOM |
-| UI & Animations | CSS, Framer Motion, Lucide React |
-| Build Tooling | React Scripts (Create React App) |
+| Frontend | React, React DOM, React Router DOM |
+| State | Redux Toolkit, React Redux |
+| Backend | Node.js, Express, CORS, Multer |
+| Database | SQLite3 (dev), PostgreSQL via `pg` (prod) |
+| Media | Cloudinary |
+| Tooling | react-scripts (CRA), nodemon, concurrently |
 | Testing | React Testing Library, Jest DOM |
 
-## Repository Structure
+## Project Structure
 ```text
 Hack4IMPACTTrack2-DedSec/
-├── public/
-│   ├── index.html
-│   ├── manifest.json
-│   └── media/
-├── src/
-│   ├── components/
-│   │   ├── auth/
-│   │   ├── buyer/
-│   │   ├── common/
-│   │   ├── seller/
-│   │   └── admin/
-│   ├── redux/
-│   │   ├── slices/
-│   │   └── store.js
-│   ├── utils/
-│   ├── App.js
-│   ├── index.js
-│   ├── setupProxy.js
-│   └── context/
+├── public/                  # Frontend static assets
+├── src/                     # Frontend app (components, redux, utils)
+├── server/
+│   ├── server.js            # Express API entrypoint
+│   ├── config/
+│   ├── migrations/
+│   ├── routes/
+│   ├── scripts/
+│   └── data/
+├── API_DOCUMENTATION.md
+├── DEPLOYMENT_GUIDE_NEON_CLOUDINARY.md
 ├── package.json
-├── package-lock.json
 └── README.md
 ```
- 
-## Checkpoint 1 — [24hr stable]
-**Pushed:** 20th March, 8:00 PM
 
-### What is done
-- Frontend project structure finalized in `HACK4IMPACTTRACK2-DEDSEC` with:
-  - `src/`
-  - `public/`
-  - `package.json`
-  - `package-lock.json`
-- Core frontend modules are in place:
-  - Auth, buyer, seller, admin, profile, settings, orders
-  - Shared UI components and layout
-  - Redux store + slices + middleware
-  - Utility and theme/context setup
-- Static assets and media integrated in `public/media`.
-- Build validation completed: frontend compiles successfully (`npm run build` passed).
+## Prerequisites
+- Node.js 18+
+- npm 9+
 
-### What is pending
-- Start dev server and run full page-level manual QA (`npm start`).
-- Backend API/proxy env wiring verification for local development.
-- Final UI regression pass and route-by-route checks.
+## Environment Variables
 
-### Blockers
-- Dev server must remain running to test on `http://localhost:3000`.
-- Local API env values may need alignment (`REACT_APP_BACKEND_PORT`, `REACT_APP_API_BASE_URL`) for full data flow.
+### Frontend (`.env` in repo root)
+You can copy from `.env.template`.
 
-## How to run locally
-1. Clone the repo (or your fork) and enter the folder:
-   ```bash
-   git clone https://github.com/nidhiatwork01-cmyk/Hack4IMPACTTrack2-DedSec.git
-   cd Hack4IMPACTTrack2-DedSec
-   ```
-   If you forked first, clone your fork URL instead.
+- `REACT_APP_API_BASE_URL` (optional)
+   - Leave empty for local proxy-based development.
+   - Set to full backend URL in deployed frontend builds.
+- `REACT_APP_BACKEND_PORT` (optional, default `8000`)
+   - Used by `src/setupProxy.js` to proxy `/api` and `/uploads`.
+- `REACT_APP_RAZORPAY_KEY` or `REACT_APP_RAZORPAY_KEY_ID` (optional)
+   - If absent, app falls back to a test key in code.
+
+### Backend (`server/.env`)
+For production examples, see `server/.env.production.template`.
+
+Important keys:
+- `NODE_ENV`
+- `PORT`
+- `CORS_ORIGIN`
+- `DATABASE_URL` (or `SUPABASE_DATABASE_URL`)
+- `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET`, `CLOUDINARY_FOLDER`
+- `RAZORPAY_KEY_ID`, `RAZORPAY_KEY_SECRET`
+
+## Local Development
+
+1. Clone and enter repository:
+    ```bash
+    git clone https://github.com/nidhiatwork01-cmyk/Hack4IMPACTTrack2-DedSec.git
+    cd Hack4IMPACTTrack2-DedSec
+    ```
+
 2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the development server:
-   ```bash
-   npm start
-   ```
-4. Open `http://localhost:3000` in your browser.
+    ```bash
+    npm install
+    ```
+
+3. (Optional) Create root `.env` from template and edit values.
+
+4. Start full-stack dev mode (recommended):
+    ```bash
+    npm run dev
+    ```
+    This runs backend (`nodemon server/server.js`) and frontend (`react-scripts start`) together.
+
+5. Open `http://localhost:3000`.
+
+## Useful Scripts
+- `npm run dev`: run frontend + backend together
+- `npm run server`: run backend only
+- `npm start`: run frontend only
+- `npm run build`: production frontend build
+- `npm test`: run frontend tests
+- `npm run start:production`: start backend in production mode
+
+## Deployment Notes
+- Frontend build output is generated in `build/`.
+- Backend uses PostgreSQL in production and expects `DATABASE_URL` or `SUPABASE_DATABASE_URL`.
+- See deployment docs:
+   - `DEPLOYMENT_GUIDE_NEON_CLOUDINARY.md`
+   - `API_DOCUMENTATION.md`
+
+## Current Status
+- Frontend builds successfully with `npm run build`.
+- Backend entry file passes syntax check (`node --check server/server.js`).
+- Workspace diagnostics currently report no code errors.
