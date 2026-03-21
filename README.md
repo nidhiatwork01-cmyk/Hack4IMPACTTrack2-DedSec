@@ -24,9 +24,6 @@ Use these demo credentials for a smooth experience:
    - Email: `nidhilogins@gmail.com`
    - Password: `160222`
 
-### Loading Note
-Please wait up to **30 seconds** for products to appear after login in some sessions.
-This project was built rapidly during a 48-hour hackathon, so occasional initial load delay can happen.
 
 ## Detailed Presentation
 For a clearer walkthrough of the problem statement and proposed solution, view the project presentation:
